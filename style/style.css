@@ -474,3 +474,16 @@ body::-webkit-scrollbar-thumb {
   width: 300px;
   color: #fff;
 }
+#footer{
+  padding: 20px;
+  color: #fff;
+  background: #004;
+  margin-top: 30px;
+}
+#footer h4{
+  color: #fff;
+}
+#footer a{
+  color: #50a2f5 !important;
+  text-decoration: underline;
+}
