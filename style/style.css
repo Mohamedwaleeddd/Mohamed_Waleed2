@@ -139,9 +139,7 @@ header a{
   flex-wrap: wrap;
 }
 
-.landing img{
-  width: 350px;
-}
+
 .landing button{
   border-left: 2px #004 solid;
   border-right: 2px #006 solid;
