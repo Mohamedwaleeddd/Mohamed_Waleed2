@@ -360,56 +360,6 @@ button{
   border-radius: 5px;
   background: dodgerblue;
 }
-
-.cont{
-  width: 100%;
-  backdrop-filter: blur(200px);
-  top: 0;
-  position: fixed;
-  z-index: 99999;
-  right: 0;
-  height: 100vh;
-  height: 100%;
-  display: grid;
-  background: ghostwhite;
-  place-items: center;
-}
-.load{
-  width: 230px;
-  border-radius: 3000px;
-  height: 230px;
-  display: grid;
-  margin-top: 30px;
-  place-items: center;
-  position: relative;
-}
-.load span{
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 230px;
-  border-radius: 2200px;
-    box-shadow: 1px 1px 5px #006, 1px 1px 5px #005;
-  animation: 0.50s an linear infinite;
-  border-bottom: 05px #005 solid;
-  border-top: 5px #006 solid;
-  height: 230px;
-}
-@keyframes an{
-  0%{
-    transform: rotate(0deg);
-  }
-  0%{
-    transform: rotate(360deg);
-  }
-}
-
-.load h2{
-  background: -webkit-linear-gradient(#006,#005);
-  -webkit-background-clip: text;
-  font-size: 40px;
-  -webkit-text-fill-color: transparent;
-}
 .h1{
   border-right: 3px #005 solid;
   border-left: 3px #005 solid;
