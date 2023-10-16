@@ -51,16 +51,6 @@ arrowUp.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//Animations
-function myFunction() {
-  myVar = setTimeout(showPage, 500);
-}
-
-function showPage() {
-  document.querySelector('.cont').style.display = "none";
-}
-
-
 function ui(){
   document.querySelector('.images').style.display = "flex";
   document.querySelector('.p').style.display = "none";
