@@ -11,21 +11,42 @@
   color: #222;
   font-family: 'Tilt Neon', sans-serif;
 }
-.line{
-  border-bottom:4px #004 solid;
-  width:27px;
-  margin-top: 5px;
-  border-radius: 1.50px;
+
+/* Hampurger Menu */
+#show{
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  left: 20px;
+  height: 20px;
+  place-items: center;
+  box-shadow: inset 1px 1px 7px #DBDBDB;
 }
+.line{
+  width: 30px;
+  border-radius: 1px;
+  height: 3px;
+  background: #005;
+}
+.line2{
+  margin-top: 5px;
+  width: 30px;
+  border-radius: 1px;
+  height: 3px;
+  background: #005;
+}
+
 nav{
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: space-between;
   height: 70px;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 99;
   background: ghostwhite;
   box-shadow: 1px 1px 7px #cac8c8;
 }
@@ -36,46 +57,64 @@ nav img{
   background: #0B0019;
   border-radius: 10%;
 }
-#show{
-  position: absolute;
-  left: 20px;
-}
-.menu{
-  top: -100%;
+aside{
   position: fixed;
+  place-items: center;
+  display: grid;
+  height: 100vh;
+  top: 70px;
   z-index: 9999;
-  height: 420px;
+  width: 210px;
   background: #002;
-  left: 0;
   color: #fff;
-  width:100%;
+}
+aside a::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0px;
+  left: 0;
+  filter: drop-shadow(1px 1px 7px #2B7CFF);
+  background: #2B7CFF;
+  border-radius: 4px;
+  transform-origin: bottom right;
+  transition: transform 0.25s;
+}
+
+aside a:hover::before {
+  background: #2B7CFF;
+  transform-origin: bottom left;
+  transform: scaleX(1.1)
+}
+
+aside a:hover {
+  padding: 0;
+  text-shadow: 1px 1px 15px #2B7CFF94;
+}
+
+aside img{
+  width: 150px;
+  border-radius: 100px;
 }
 a{
   font-weight: 600;
   color: #fff;
 }
-.menu span{
+aside span{
   color: dodgerblue;
 }
-.menu h2,h1{
+aside h2,h1{
   color: #fff;
-}
-.menu a:hover{
-  margin-right: 30px;
 }
 li{
   list-style: none;
   padding: 15px;
   background: #0001;
 }
-li:hover{
-  margin-right:  30px;
-  width: 100%;
-}
-.menu h1{
-  margin-left: 10px;
-}
-.menu h1:hover{
+
+aside h1:hover{
   color: red;
 }
 span{
@@ -130,25 +169,34 @@ header a{
   .landing a{
     color: #fff !important;
   }
+  a:hover{
+    color: #fff !important;
+  }
   .skills{
     display: block !important;
   }
 }
 
 .landing{
-  display: flex;
-  margin-top: 130px;
-  align-items: center;
+  box-shadow: 1px 1px 10px #004;
+  position: relative;
+  display: grid;
+  background: linear-gradient(#04002D , #020019, #020019, #04002D);
+  height: 100vh;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
-
-
+.landing h3{
+  color: #E5E5E5;
+}
+.landing span{
+  text-shadow: 1px 1px 10px #006EDDAB;
+  color: #007FFF;
+}
 .landing button{
-  border-left: 2px #004 solid;
-  border-right: 2px #006 solid;
-  border-bottom: 2px #006 solid;
-  border-top: 2px #004 solid;
+  border-left: 2px dodgerblue solid;
+  border-right: 2px #006CE3 solid;
+  border-bottom: 2px #006CE3 solid;
+  border-top: 2px dodgerblue solid;
   background: none;
   color: #fff;
   width: 100px;
@@ -156,14 +204,15 @@ header a{
   cursor: pointer;
   font-size: 14px;
   margin-top: 10px;
-  color: #004;
+  color: dodgerblue;
   padding: 5px;
+  transition: 1s !important;
   justify-content: center;
   height: 35px;
 }
 
 button:hover {
-  background: linear-gradient(#004,#006);
+  background: linear-gradient(dodgerblue, #006CE3);
   color: #fff;
 }
 html{
@@ -206,19 +255,15 @@ html{
 }
 
 .skills-cont{
-   background: ghostwhite;
    opacity: 0;
-   border: 5px ghostwhite solid;
-   display: flex;
-   align-items: center;
+   display: block;
    justify-content: space-around;
-   flex-wrap: wrap
 }
 .skill{
   width: 270px;
   height: 150px;
   margin-top: 10px;
-  border: 1px #c4c4c4 solid;
+  border: 1px lightgray solid;
   display: grid;
   border-radius: 5px;
   padding: 7px;
@@ -226,10 +271,14 @@ html{
   box-shadow: 1px 1px 7px lightgray;
 }
 .skill:hover{
-  border-color: black;
+  border-color: #005;
 }
 .skill svg{
   height: 70px;
+  fill: #004;
+}
+.skill h2{
+  color: #004;
 }
 button{
   width: 80px;
@@ -254,7 +303,7 @@ button{
   word-wrap: word-break;
   overflow-y: scroll;
   margin-top: 50px;
-  border: 1px #d3d3d39f solid;
+  border: 1px #D3D3D39F solid;
   box-shadow: 1px 1px 7px lightgrey;
   border-radius: 10px;
   position: relative;
@@ -270,11 +319,11 @@ button{
 #arrow-up {
   opacity: 0;
   position: absolute;
+  height: 50px;
   width: 50px;
   bottom: 20px;
   right: 50px;
   z-index: 99999999;
-  color: white;
   position: fixed;
   cursor: pointer;
   border-radius: 1500px;
@@ -283,19 +332,16 @@ button{
   font-weight: bold;
   animation: kia 1s ease-in infinite normal;
   font-size: 20px;
-  border: 2px  #004 solid;
-  backdrop-filter: blur(50px);
-  color: #004;
-}
-#arr{
-  color: #004;
-}
-#arrow-up:hover {
-  border: 1px solid #004;
+  border: 2px  #0000B2 solid;
   background: #004;
+  backdrop-filter: blur(50px);
   color: #fff;
 }
-#arr:hover{
+#arrow-up:hover {
+  background: #003;
+  color: #fff;
+}
+#arrow-up h3{
   color: #fff;
 }
 .hover-underline-animation {
@@ -322,14 +368,6 @@ button{
   color: #005;
   transform-origin: bottom left;
 }
-.icons{
-  align-items: center;
-  display: flex;
-  padding: 10px;
-}
-.icons svg{
-  fill: #fff;
-}
 
 .icons2{
   display: flex;
@@ -345,7 +383,8 @@ button{
 }
 .icons2 svg{
   height: 23px; 
-  box-shadow: inset 1px 1px 7px #c5c5c5;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 7px #E6E6E6;
   padding: 7px;
   border-radius: 2px;
   margin-left: 10px;
@@ -444,12 +483,57 @@ footer a{
 .landing img{
   width: 370px;
 }
-.menu h1{
-  margin-top: 20px;
+aside h1{
+  top: 20px;
 }
-.menu ul{
+aside ul{
   margin-top: 40px;
 }
-.menu li{
+aside li{
   margin: 20px;
+}
+.icons svg{
+  margin-left: 10px;
+  fill: #222;
+  padding: 5px;
+  background: #fff;
+  border-radius: 100px;
+  height: 20px;
+  width: 20px;
+}
+.contact input{
+  width: 250px;
+  padding: 9px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 20px;
+  background: none;
+  border: 1px solid #E2E2E278;
+  color: whitesmoke ;
+  border-bottom: 2px whitesmoke soli  d;
+  outline: none;
+}
+::placeholder{
+  color: #fff;
+  opacity: 0.70;
+}
+.contact button{
+  width: 270px;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  height: 30px;
+  color: whitesmoke;
+}
+.contact button:hover{
+  background: whitesmoke;
+  color: #002;
+}
+footer .icons{
+  margin-top: 30px;
+}
+.contact{
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #113;
 }
