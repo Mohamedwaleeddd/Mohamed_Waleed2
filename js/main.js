@@ -27,11 +27,32 @@ window.addEventListener("scroll", () => {
 });
 
 // Menu Box
-function show(){
-  document.querySelector('.menu').style.top = "0";
-}
-function d(){
-  document.querySelector('.menu').style.top = "-100%";
+//Show The Side Bar
+const line = document.querySelector('.line');
+const line2 = document.querySelector('.line2');
+const menuBox = document.querySelector('aside');
+
+menuBox.style.left = "-200%";
+
+function show() {
+  if (menuBox.style.left === "-200%") {
+    line2.style.marginBottom = "5px";
+    line2.style.position = "absolute";
+    line2.style.transform = "rotate(130deg)";
+    line.style.transform = "rotate(50deg)";
+    line.style.marginTop = "1px";
+    menuBox.style.left = "0px";
+  }
+
+  else if (menuBox.style.left === "0px") {
+    line2.style.marginBottom = "0px";
+    line2.style.position = "relative";
+    line2.style.transform = "rotate(360deg)";
+    line.style.transform = "rotate(360deg)";
+    line.style.marginTop = "0px";
+
+    menuBox.style.left = "-200%";
+  }
 }
 
 
@@ -57,5 +78,26 @@ function ui(){
 }
 function frontEnd(){
   document.querySelector('.images').style.display = "none";
-  document.querySelector('.p').style.display = "block";
+  document.querySelector('.p').style.display = "flex";
 }
+
+//dark mode
+
+function dark() {
+  var element = document.body;
+  element.classList.toggle("body");
+}
+
+
+
+
+//contact form
+const contactButton = document.getElementById("contact-button");
+const messageText = document.getElementById("message-text");
+
+contactButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const messageCode = messageText.value.split(" ").join("%20");
+  console.log(messageCode);
+  location.assign(`https://wa.me/+201556135667?text=${messageCode}`);
+});
