@@ -81,32 +81,14 @@ function frontEnd(){
   document.querySelector('.p').style.display = "flex";
 }
 
-//dark mode
-
-function dark() {
-  var element = document.body;
-  element.classList.toggle("body");
-}
-
-
-
 
 //contact form
-const contactButton = document.getElementById("contact-button");
-const messageText = document.getElementById("message-text");
+const contactBtb = document.getElementById("contact-button");
+const messageTxt = document.getElementById("message-text");
 
-contactButton.addEventListener("click", async (e) => {
+contactBtn.addEventListener("click", (e) => {
   e.preventDefault();
-
-  const phoneNumber = "+201556135667"; // رقم هاتف واتساب
-  const apiEndpoint = "https://api.whatsapp.com/send";
-
-  try {
-    const encodedMessage = encodeURIComponent(messageText.value);
-    const whatsappURL = `${apiEndpoint}?phone=${phoneNumber}&text=${encodedMessage}`;
-
-    window.open(whatsappURL, '_blank');
-  } catch (error) {
-    console.error("Error sending WhatsApp message:", error);
-  }
-});
+  const msgCode = messageTxt.value.split(" ").join("%20");
+  console.log(msgCode);
+  location.assign(`https://wa.me/+201556135667?text=${msgCode}`);
+})
