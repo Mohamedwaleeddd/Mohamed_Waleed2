@@ -1,3 +1,44 @@
+//Header
+
+let header = `<nav>
+    <div id="show" onclick="show()" style="cursor:pointer;">
+        <div class="line"></div>
+        <div class="line2"></div>
+    </div>
+    
+  <img src="imgs/logo.webp" width="3rem" alt="mw-logo">
+  
+  </nav>
+  
+  <!-- Menu Box -->
+  <aside align="center">
+
+  <div align="center">
+  <img src="imgs/logo2.webp" alt="logo">
+  <h2><span>M</span>ohamed Waleed</h2>
+  <ul>
+  <li class="hover-underline-animation"><a  href="#">Home</a></li>
+  <li class="hover-underline-animation"><a href="#about">About</a></li>
+  <li class="hover-underline-animation"><a  href="#p">Projects</a></li>
+  <li class="hover-underline-animation"><a  href="https://wa.me/+201282758797">Contact</a></li>
+  </ul>
+    </div>
+  </aside>
+  
+  <!-- Desktop Navbar -->
+  <header>
+    <h2><span>M</span>ohamed Waleed</h2>
+    <br><br>
+    <a class="hover-underline-animation" href="#">Home</a>
+    <a class="hover-underline-animation" href="#about">About</a>
+    <a class="hover-underline-animation" href="#p">Projects</a>
+    <a class="hover-underline-animation" href="https://wa.me/+201556135667">Contact</a>
+  </header>`;
+const headerCont = document.getElementById("header");
+
+headerCont.innerHTML = header;
+
+
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 1200) {
     document.querySelector('.p').style.opacity = "1";
@@ -81,14 +122,26 @@ function frontEnd(){
   document.querySelector('.p').style.display = "flex";
 }
 
+//dark mode
+
+function dark() {
+  var element = document.body;
+  element.classList.toggle("body");
+}
+
+
+
 
 //contact form
-const contactBtb = document.getElementById("contact-button");
-const messageTxt = document.getElementById("message-text");
 
-contactBtn.addEventListener("click", (e) => {
+
+const contact = document.getElementById("contact");
+const contactForm = document.querySelector(".contact form");
+
+contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const msgCode = messageTxt.value.split(" ").join("%20");
-  console.log(msgCode);
-  location.assign(`https://wa.me/+201556135667?text=${msgCode}`);
-})
+  const messageText = document.getElementById("message-text").value;
+  const messageCode = messageText.split(" ").join("%20");
+  console.log(messageCode);
+  location.assign(`https://wa.me/+201556135667?text=${messageCode}`);
+});
