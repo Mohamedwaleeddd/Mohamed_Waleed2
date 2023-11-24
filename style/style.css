@@ -137,11 +137,13 @@ span{
   a:hover{
     color: #005 !important;
   }
+  .skills-cont{
+    display: flex !important;
+  }
 }
 header{
   height: 70px;
   background: ghostwhite;
-  box-shadow: 1px 1px 7px #cac8c8;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -172,7 +174,7 @@ header a{
   a:hover{
     color: #fff !important;
   }
-  .skills{
+  .skills-cont{
     display: block !important;
   }
 }
@@ -256,7 +258,7 @@ html{
 
 .skills-cont{
    opacity: 0;
-   display: block;
+   flex-wrap: wrap;
    justify-content: space-around;
 }
 .skill{
@@ -537,3 +539,26 @@ footer .icons{
   padding: 20px;
   background: #113;
 }
+.c-card{
+  width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px;
+  border-radius: 7px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 10px #CACACA;
+}
+.c-card h3{
+  color: #006;
+}
+.c-card svg{
+  height: 20px;
+  fill: #006;
+}
+.social{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  }
