@@ -68,30 +68,32 @@ aside{
   background: #002;
   color: #fff;
 }
-aside a::before {
-  content: '';
-  position: absolute;
-  width: 90%;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: 0px;
-  left: 0;
-  filter: drop-shadow(1px 1px 7px #2B7CFF);
-  background: #2B7CFF;
-  border-radius: 4px;
-  transform-origin: bottom right;
-  transition: transform 0.25s;
+aside a{
+  position: relative;
 }
-
-aside a:hover::before {
+aside a::before{
+ content: '';
+ position: absolute;
+ width: 190px;
+ transform: scaleX(0);
+ height: 3px;
+ bottom: -10px;
+ left:-80px;
+ filter: drop-shadow(1px 1px 7px #2B7CFF);
+ background: #2B7CFF;
+ transform-origin: bottom top;
+ transition: transform 0.25s;
+ }
+ 
+aside a:hover::before{
   background: #2B7CFF;
-  transform-origin: bottom left;
+  transform-origin: bottom bottom;
   transform: scaleX(1.1)
 }
 
-aside a:hover {
-  padding: 0;
-  text-shadow: 1px 1px 15px #2B7CFF94;
+aside a:hover{
+  text-shadow: 1px 1px 10px #2B7CFF78;
+  color: #2B7CFF;
 }
 
 aside img{
@@ -110,7 +112,8 @@ aside h2,h1{
 }
 li{
   list-style: none;
-  padding: 15px;
+  width: 90%;
+  padding: 10px;
   background: #0001;
 }
 
@@ -346,30 +349,6 @@ button{
 #arrow-up h3{
   color: #fff;
 }
-.hover-underline-animation {
-  position: relative;
-  padding: 10px;
-}
-
-.hover-underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  border-radius: 4px;
-  background-color: #005;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  background: #005;
-  color: #005;
-  transform-origin: bottom left;
-}
 
 .icons2{
   display: flex;
@@ -492,7 +471,8 @@ aside ul{
   margin-top: 40px;
 }
 aside li{
-  margin: 20px;
+  margin-top: 10px;
+   margin:2px;
 }
 .icons svg{
   margin-left: 10px;
